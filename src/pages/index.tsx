@@ -21,11 +21,6 @@ export default function Home() {
 function AuthShowcase() {
   const { data: sessionData } = useSession();
 
-  const { data: secretMessage } = api.post.getSecretMessage.useQuery(
-    undefined, // no input
-    { enabled: sessionData?.user !== undefined },
-  );
-
   return (
     <div className="border-width-2 flex flex-row items-center justify-around gap-4 bg-red-800">
       <p className="text-center text-2xl text-white">
