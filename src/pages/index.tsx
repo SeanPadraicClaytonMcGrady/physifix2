@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useState } from "react";
 
 import { api } from "~/utils/api";
+import { BodyButton } from "./components/BodyButton";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ function AuthShowcase() {
   const { data: sessionData } = useSession();
 
   return (
-    <div className="border-width-2 flex flex-row items-center justify-around gap-4 bg-red-800">
+    <div className="border-width-2 flex flex-row items-center justify-around  bg-red-800">
       <p className="text-center text-2xl text-white">
         {sessionData && <span>{sessionData.user?.name}</span>}
       </p>
@@ -49,12 +50,18 @@ function BodyModel() {
   //It will contain the relevant diagnostics from the db.
   //Upon clicking, you will open a new page
 
+  const { data: regions } = api.get.getAllRegions.useQuery();
+
   return (
     <div className="flex h-screen w-screen flex-col items-center bg-black">
       {!sessionData && (
         <p className="text-3xl text-white">Sign in to get full functionality</p>
       )}
-      {/* Map the regions here. */}
+
+      {regions?.map((region) => {
+        return <BodyButton key={region.id} region={region} />;
+      })}
+
       <button
         className="w-14 rounded-xl bg-red-800 text-white transition hover:bg-red-500"
         onClick={() => setFront(!front)}

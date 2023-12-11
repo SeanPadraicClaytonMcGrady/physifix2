@@ -1,3 +1,16 @@
-export function BodyButton({ image, region, diagnostics }) {
-  return <div></div>;
+export function BodyButton({
+  region,
+}: {
+  region: { id: string; name: string };
+}) {
+  //This button needs to receive:
+  //The region from the db.
+  //Find the image with that region.
+  //When clicked, bring up the diagnostics for that region.
+  //So it also needs the diagnostics per region on standby.
+
+  const processedRegionName = region.name.toLowerCase();
+  const imageUrl = `public/backMaleModel/${processedRegionName}.png`;
+
+  return <div className="text-3xl text-white">{region.name}</div>;
 }
