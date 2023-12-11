@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function BodyButton({
   region,
 }: {
@@ -9,8 +11,8 @@ export function BodyButton({
   //When clicked, bring up the diagnostics for that region.
   //So it also needs the diagnostics per region on standby.
 
-  const processedRegionName = region.name.toLowerCase();
-  const imageUrl = `public/backMaleModel/${processedRegionName}.png`;
+  const processedRegionName = region.name.toLowerCase().replaceAll(" ", "");
+  const imageUrl = `/backMaleModel/${processedRegionName}.png`;
 
-  return <div className="text-3xl text-white">{region.name}</div>;
+  return <Image src={imageUrl} alt={region.name} width={100} height={100} />;
 }
