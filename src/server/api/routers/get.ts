@@ -23,5 +23,23 @@ export const getRouter = createTRPCRouter({
     return regions;
   }),
 
-  getOneRegionDiagnostics: publicProcedure.query(async ({ ctx }) => {}),
+  getRegionDiagnostics: publicProcedure
+    .input(z.object({ name: z.string().min(1) }))
+    .query(async ({ ctx, input }) => {
+      // simulate a slow db call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      const region = await ctx.db.region.findUnique({
+        where: { name: input.name },
+        include: {
+          Diagnostic: true,
+        },
+      });
+
+      if (region) {
+        return region;
+      } else {
+        throw new Error("Region not found");
+      }
+    }),
 });

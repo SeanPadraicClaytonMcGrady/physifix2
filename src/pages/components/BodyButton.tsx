@@ -1,15 +1,14 @@
 import Image from "next/image";
+import { api } from "~/utils/api";
 
 export function BodyButton({
   region,
 }: {
   region: { id: string; name: string };
 }) {
-  //When clicked, bring up the diagnostics for that region.
-  //--Need to create a fetch for the diagnostics.
-  //--Need to map them into a pop-up box.
-  //--It
-  //So it also needs the diagnostics per region on standby.
+  const { data: diagnostics } = api.get.getRegionDiagnostics.useQuery({
+    name: region.name,
+  });
 
   const processedRegionName = region.name.toLowerCase().replaceAll(" ", "");
   const imageUrl = `/backMaleModel/${processedRegionName}.png`;
@@ -18,7 +17,7 @@ export function BodyButton({
     <button
       className="relative"
       onClick={() => {
-        //The diagnostics page goes here.
+        console.log(diagnostics);
       }}
       key={region.id}
     >
