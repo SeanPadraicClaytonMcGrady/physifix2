@@ -12,7 +12,7 @@ export default function Home() {
         <title className="">Physifix</title>
         <meta
           name="description"
-          content="A self-diagnosis website for aches & pains"
+          content="A self-diagnosis app for aches & pains"
         />
       </Head>
       <AuthShowcase />
@@ -43,17 +43,14 @@ function AuthShowcase() {
 function BodyModel() {
   const { data: sessionData } = useSession();
   const [front, setFront] = useState<boolean>(true);
-  //We need to make a BodyButton component.
-  //It will be a button that receives a region from a mapping of regions
-  //from the db.
-  //It will use the string as the name of the button & image.
+
   //It will contain the relevant diagnostics from the db.
   //Upon clicking, you will open a new page
 
   const { data: regions } = api.get.getAllRegions.useQuery();
 
   return (
-    <div className="flex h-screen w-screen flex-col items-center bg-black">
+    <div className="flex h-screen w-screen flex-col items-center justify-center bg-black">
       {!sessionData && (
         <p className="text-3xl text-white">Sign in to get full functionality</p>
       )}

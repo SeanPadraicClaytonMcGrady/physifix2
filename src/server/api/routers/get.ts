@@ -22,4 +22,6 @@ export const getRouter = createTRPCRouter({
 
     return regions;
   }),
+
+  getOneRegionDiagnostics: publicProcedure.query(async ({ ctx }) => {}),
 });
