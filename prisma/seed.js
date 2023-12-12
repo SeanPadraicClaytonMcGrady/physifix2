@@ -16,14 +16,22 @@ async function seed() {
     data: {
       name: "Lower Back and Hips",
       Diagnostic: {
-        create: {
-          name: "Load Intolerance",
-          description:
-            "This test assesses your exposure to pain under spinal load.",
-          videos: [
-            "https://youtu.be/PV4pUmkbXzc?list=PLhXzc?si=HkBi6HWHJm7OOch&t=35",
-          ],
-        },
+        create: [
+          {
+            name: "Load Intolerance",
+            description:
+              "This test assesses your exposure to pain under spinal load.",
+            videos: [
+              "https://youtu.be/PV4pUmkbXzc?list=PLhXzc?si=HkBi6HWHJm7OOch&t=35",
+            ],
+          },
+          {
+            name: "Flexion Intolerance",
+            description:
+              "This test assesses your expore to pain when flexing the spine.",
+            videos: ["https://www.youtube.com/shorts/B78u8EEnrcU"],
+          },
+        ],
       },
     },
   });
