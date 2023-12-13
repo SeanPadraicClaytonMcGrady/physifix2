@@ -17,7 +17,8 @@ export type DiagnosticArray = Diagnostic[];
 
 export default function Region() {
   const router = useRouter();
-  const [selectedDropdownIndex, setSelectedDropdownIndex] = useState<number>(0);
+  const [selectedDiagnosticIndex, setSelectedDiagnosticIndex] =
+    useState<number>(0);
 
   const { name, diagnostics } = router.query;
 
@@ -26,16 +27,16 @@ export default function Region() {
   ) as DiagnosticArray;
 
   function handleDiagnosticSelection(direction: string) {
-    if (direction === "left" && selectedDropdownIndex > 0) {
-      setSelectedDropdownIndex((currentIndex) => {
+    if (direction === "left" && selectedDiagnosticIndex > 0) {
+      setSelectedDiagnosticIndex((currentIndex) => {
         return currentIndex - 1;
       });
     }
     if (
       direction === "right" &&
-      selectedDropdownIndex < diagnosticsParsed.length
+      selectedDiagnosticIndex < diagnosticsParsed.length - 1
     ) {
-      setSelectedDropdownIndex((currentIndex) => {
+      setSelectedDiagnosticIndex((currentIndex) => {
         return currentIndex + 1;
       });
     }
@@ -58,9 +59,9 @@ export default function Region() {
         </div>
       </div>
       <div className="flex h-screen w-screen flex-col items-center justify-start gap-8  bg-black text-white">
-        {diagnosticsParsed[selectedDropdownIndex] && (
+        {diagnosticsParsed[selectedDiagnosticIndex] && (
           <DiagnosticInformant
-            diagnostic={diagnosticsParsed[selectedDropdownIndex]}
+            diagnostic={diagnosticsParsed[selectedDiagnosticIndex]}
           />
         )}
       </div>
