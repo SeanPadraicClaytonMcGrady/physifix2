@@ -17,7 +17,7 @@ export function AuthShowcase() {
       </p>
       {/* <h1 className="text-3xl text-white">PhysiFix</h1> */}
       <button onClick={handleHomeNavigation} className="text-3xl text-white">
-        Physifix
+        PhysiFix
       </button>
       <button
         className="rounded-full bg-red-800 px-10 py-3 text-2xl  text-white no-underline transition hover:bg-red-700"

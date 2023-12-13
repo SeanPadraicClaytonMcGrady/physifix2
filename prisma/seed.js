@@ -22,20 +22,37 @@ async function seed() {
             description:
               "This test assesses your exposure to pain under spinal load.",
             videos: [
-              "https://youtu.be/PV4pUmkbXzc?list=PLhXzc?si=HkBi6HWHJm7OOch&t=35",
+              "https://www.youtube.com/embed/PV4pUmkbXzc?si=o7PMjaNFuOIVWrxJ&amp;start=35",
             ],
           },
           {
             name: "Flexion Intolerance",
             description:
-              "This test assesses your expore to pain when flexing the spine.",
-            videos: ["https://www.youtube.com/shorts/B78u8EEnrcU"],
+              "This test assesses your exposure to pain when flexing the spine.",
+            videos: ["https://www.youtube.com/embed/iUfd-GZHb3c"],
+          },
+          {
+            name: "Gluteal Amnesia",
+            description:
+              "Malfunctioning glutes are a potential cause of back & hip pain. This test assesses glute participation.",
+            videos: [
+              "https://www.youtube.com/embed/KypIeyFCUa8",
+              "https://www.youtube.com/embed/RWF8baFGdFI",
+            ],
+          },
+          {
+            name: "Hip Immobility",
+            description:
+              "Immobile hips are a potential cause of hip and lower back pain, as well as knee pain for compound exercises.",
+            videos: [
+              "https://www.youtube.com/embed/tASa_2DB_ms",
+              "https://www.youtube.com/embed/h4cndex_rBM",
+            ],
           },
         ],
       },
     },
   });
-
   // const loadIntolerance = await prisma.diagnostic.create({
   //   data: {
   //     name: "Load Intolerance",
