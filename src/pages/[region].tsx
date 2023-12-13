@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { AuthShowcase } from "./components/AuthShowcase";
-import { DropdownMenu } from "./components/DropdownMenu";
+import { DiagnosticInformant } from "./components/DiagnosticInformant";
+import { useState } from "react";
 
-type Diagnostic = {
+export type Diagnostic = {
   id: string;
   name: string;
   videos: string[];
@@ -12,10 +13,12 @@ type Diagnostic = {
   region: string | null;
 };
 
-type DiagnosticArray = Diagnostic[];
+export type DiagnosticArray = Diagnostic[];
 
 export default function Region() {
   const router = useRouter();
+  const [selectedDiagnosticIndex, setSelectedDiagnosticIndex] =
+    useState<number>(0);
 
   const { name, diagnostics } = router.query;
 
@@ -23,22 +26,44 @@ export default function Region() {
     diagnostics as string,
   ) as DiagnosticArray;
 
+  function handleDiagnosticSelection(direction: string) {
+    if (direction === "left" && selectedDiagnosticIndex > 0) {
+      setSelectedDiagnosticIndex((currentIndex) => {
+        return currentIndex - 1;
+      });
+    }
+    if (
+      direction === "right" &&
+      selectedDiagnosticIndex < diagnosticsParsed.length - 1
+    ) {
+      setSelectedDiagnosticIndex((currentIndex) => {
+        return currentIndex + 1;
+      });
+    }
+  }
+
   //We need to map diagnosticsParsed onto DropdownMenu. Then we need to worry about organizing & arranging.
 
   return (
     <>
       <AuthShowcase />
       <div className="  bg-black text-center text-white">
-        <h1 className="items-center justify-center text-2xl">{name}</h1>
-        <h2>
-          Try these diagnostics one-by-one. If they trigger pain, research &
-          follow their instructions.
-        </h2>
+        <div className="flex flex-row justify-evenly">
+          <button onClick={() => handleDiagnosticSelection("left")}>
+            Left
+          </button>
+          <h1 className="items-center justify-center text-2xl">{name}</h1>
+          <button onClick={() => handleDiagnosticSelection("right")}>
+            Right
+          </button>
+        </div>
       </div>
       <div className="flex h-screen w-screen flex-col items-center justify-start gap-8  bg-black text-white">
-        {diagnosticsParsed.map((diagnostic) => {
-          return <DropdownMenu diagnostic={diagnostic} />;
-        })}
+        {diagnosticsParsed[selectedDiagnosticIndex] && (
+          <DiagnosticInformant
+            diagnostic={diagnosticsParsed[selectedDiagnosticIndex]}
+          />
+        )}
       </div>
     </>
   );
