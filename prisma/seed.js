@@ -43,7 +43,7 @@ async function seed() {
           {
             name: "Hip Immobility",
             description:
-              "Immobile hips are a potential cause of hip and lower back pain, as well as knee pain for compound exercises.",
+              "Immobile hips are a potential cause of hip and lower back pain, as well as knee pain.",
             videos: [
               "https://www.youtube.com/embed/tASa_2DB_ms",
               "https://www.youtube.com/embed/h4cndex_rBM",
@@ -53,14 +53,6 @@ async function seed() {
       },
     },
   });
-  // const loadIntolerance = await prisma.diagnostic.create({
-  //   data: {
-  //     name: "Load Intolerance",
-  //     description:
-  //       "This test assesses your exposure to pain under spinal load.",
-  //     videos: ["https://youtu.be/PV4pUmkbXzc?si=HkBi6HWHJm7mOOch&t=35"],
-  //   },
-  // });
 }
 
 seed()

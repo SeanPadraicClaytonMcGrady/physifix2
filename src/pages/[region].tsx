@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { AuthShowcase } from "./components/AuthShowcase";
 import { DiagnosticInformant } from "./components/DiagnosticInformant";
 import { useState } from "react";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 export type Diagnostic = {
   id: string;
@@ -49,13 +50,28 @@ export default function Region() {
       <AuthShowcase />
       <div className="  bg-black text-center text-white">
         <div className="flex flex-row justify-evenly">
-          <button onClick={() => handleDiagnosticSelection("left")}>
-            Left
-          </button>
+          <div className="w-1/5 text-center">
+            {selectedDiagnosticIndex !== 0 && (
+              <button
+                className="gap-0"
+                onClick={() => handleDiagnosticSelection("left")}
+              >
+                <GoArrowLeft
+                  className={" rounded-xl text-3xl transition hover:bg-red-800"}
+                />
+              </button>
+            )}
+          </div>
           <h1 className="items-center justify-center text-2xl">{name}</h1>
-          <button onClick={() => handleDiagnosticSelection("right")}>
-            Right
-          </button>
+          <div className="w-1/5 text-center">
+            {selectedDiagnosticIndex !== diagnosticsParsed.length - 1 && (
+              <button onClick={() => handleDiagnosticSelection("right")}>
+                <GoArrowRight
+                  className={" rounded-xl text-3xl transition hover:bg-red-800"}
+                />
+              </button>
+            )}
+          </div>
         </div>
       </div>
       <div className="flex h-screen w-screen flex-col items-center justify-start gap-8  bg-black text-white">
