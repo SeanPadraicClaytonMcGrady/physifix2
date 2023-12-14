@@ -75,12 +75,16 @@ export function DiagnosticInformant({
           <div className=" flex flex-row justify-evenly">
             {selectedVideoIndex !== 0 && (
               <button onClick={() => handleVideoSelection("previous")}>
-                <GoArrowUp className="text-3xl" />
+                <GoArrowUp
+                  className={" rounded-xl text-3xl transition hover:bg-red-800"}
+                />
               </button>
             )}
             {selectedVideoIndex !== diagnostic.videos.length - 1 && (
               <button onClick={() => handleVideoSelection("next")}>
-                <GoArrowDown className="text-3xl" />
+                <GoArrowDown
+                  className={" rounded-xl text-3xl transition hover:bg-red-800"}
+                />
               </button>
             )}
           </div>

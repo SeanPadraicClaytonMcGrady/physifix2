@@ -57,9 +57,7 @@ export default function Region() {
                 onClick={() => handleDiagnosticSelection("left")}
               >
                 <GoArrowLeft
-                  className={
-                    " rounded-xl text-3xl transition hover:bg-green-500"
-                  }
+                  className={" rounded-xl text-3xl transition hover:bg-red-800"}
                 />
               </button>
             )}
@@ -68,7 +66,9 @@ export default function Region() {
           <div className="w-1/5 text-center">
             {selectedDiagnosticIndex !== diagnosticsParsed.length - 1 && (
               <button onClick={() => handleDiagnosticSelection("right")}>
-                <GoArrowRight className={"text-3xl"} />
+                <GoArrowRight
+                  className={" rounded-xl text-3xl transition hover:bg-red-800"}
+                />
               </button>
             )}
           </div>

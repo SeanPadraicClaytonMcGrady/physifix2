@@ -43,7 +43,7 @@ async function seed() {
           {
             name: "Hip Immobility",
             description:
-              "Immobile hips are a potential cause of hip and lower back pain, as well as knee pain for compound exercises.",
+              "Immobile hips are a potential cause of hip and lower back pain, as well as knee pain.",
             videos: [
               "https://www.youtube.com/embed/tASa_2DB_ms",
               "https://www.youtube.com/embed/h4cndex_rBM",
