@@ -53,14 +53,6 @@ async function seed() {
       },
     },
   });
-  // const loadIntolerance = await prisma.diagnostic.create({
-  //   data: {
-  //     name: "Load Intolerance",
-  //     description:
-  //       "This test assesses your exposure to pain under spinal load.",
-  //     videos: ["https://youtu.be/PV4pUmkbXzc?si=HkBi6HWHJm7mOOch&t=35"],
-  //   },
-  // });
 }
 
 seed()
