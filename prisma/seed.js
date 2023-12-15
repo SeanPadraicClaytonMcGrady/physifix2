@@ -15,6 +15,7 @@ async function seed() {
   const lowerBackAndHipsRegion = await prisma.region.create({
     data: {
       name: "Lower Back and Hips",
+      front: false,
       Diagnostic: {
         create: [
           {
@@ -54,6 +55,86 @@ async function seed() {
     },
   });
 }
+
+const anklesAndHeelsRegion = await prisma.region.create({
+  data: {
+    name: "Ankles and Heels",
+    front: false,
+    Diagnostic: {},
+  },
+});
+
+const calvesRegion = await prisma.region.create({
+  data: {
+    name: "Calves",
+    front: false,
+    Diagnostic: {},
+  },
+});
+
+const hamstringsRegion = await prisma.region.create({
+  data: {
+    name: "Hamstrings",
+    front: false,
+    Diagnostic: {},
+  },
+});
+
+const middleBackRegion = await prisma.region.create({
+  data: {
+    name: "Middle Back",
+    front: false,
+    Diagnostic: {},
+  },
+});
+
+const upperBackRegion = await prisma.region.create({
+  data: {
+    name: "Upper Back",
+    front: false,
+    Diagnostic: {},
+  },
+});
+
+const napeRegion = await prisma.region.create({
+  data: {
+    name: "Nape",
+    front: false,
+    Diagnostic: {},
+  },
+});
+
+const tricepsRegion = await prisma.region.create({
+  data: {
+    name: "Triceps",
+    front: false,
+    Diagnostic: {},
+  },
+});
+
+const forearmRegion = await prisma.region.create({
+  data: {
+    name: "Forearm",
+    front: false,
+    Diagnostic: {},
+  },
+});
+
+const handRegion = await prisma.region.create({
+  data: {
+    name: "Hand",
+    front: false,
+    Diagnostic: {},
+  },
+});
+
+const trapeziusRegion = await prisma.region.create({
+  data: {
+    name: "Trapezius",
+    front: false,
+    Diagnostic: {},
+  },
+});
 
 seed()
   .then(async () => {

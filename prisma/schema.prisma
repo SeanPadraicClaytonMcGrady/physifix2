@@ -76,6 +76,7 @@ model VerificationToken {
 model Region {
     id         String       @id @default(cuid())
     name       String       @unique
+    front      Boolean
     Diagnostic Diagnostic[]
 }
 
