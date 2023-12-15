@@ -20,27 +20,6 @@ export function DiagnosticInformant({
   if (!diagnostic) {
     return null;
   } else {
-    // const totalVideos = diagnostic.videos.length;
-
-    // function handleWheel(event: WheelEvent) {
-    //   if (event.deltaY < 0) {
-    //     setSelectedVideoIndex((prevIndex) =>
-    //       prevIndex === totalVideos - 1 ? 0 : prevIndex + 1,
-    //     );
-    //   } else {
-    //     setSelectedVideoIndex((prevIndex) =>
-    //       prevIndex === 0 ? totalVideos - 1 : prevIndex - 1,
-    //     );
-    //   }
-    // }
-
-    // useEffect(() => {
-    //   window.addEventListener("wheel", handleWheel);
-    //   return () => {
-    //     window.removeEventListener("wheel", handleWheel);
-    //   };
-    // }, []);
-
     function handleVideoSelection(direction: string) {
       if (direction === "previous" && selectedVideoIndex > 0) {
         setSelectedVideoIndex((currentIndex) => {
@@ -60,10 +39,7 @@ export function DiagnosticInformant({
 
     return (
       <>
-        <div
-          className="flex h-4/5 w-4/5 flex-col justify-center  text-center"
-          // onWheel={handleWheel}
-        >
+        <div className="flex h-4/5 w-4/5 flex-col justify-center  text-center">
           <div className="text-xl">{diagnostic.name}</div>
           <iframe
             className="h-full w-full"

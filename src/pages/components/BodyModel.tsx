@@ -8,8 +8,6 @@ export function BodyModel() {
   const { data: sessionData } = useSession();
   const [front, setFront] = useState<boolean>(true);
 
-  const { data: regions } = api.get.getAllRegions.useQuery();
-
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-start bg-black">
       {!sessionData && (
