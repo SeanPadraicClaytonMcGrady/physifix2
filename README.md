@@ -1,28 +1,20 @@
-# Create T3 App
+# Physifix
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Physifix treats your aches and pains with curated diagnostics & exercises. 
 
-## What's next? How do I make an app with this?
+# Features
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- An interactive human model (only the rear hips & lower back have content at the moment)
+- Curated diagnostics & videos
+- OAuth (Although there is no benefit at the moment)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+#Known bugs
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- Halves of both bodies don't work: The SVG representing the front & rear human models uses a transformation of the complete image on one side to produce the picture of the other half. Unfortunately, this means that copied half isn't interactive. When we have the time, this will be fixed.
 
-## Learn More
+# Future features:
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- Bookmarking diagnostic videos
+- Rating diagnostic videos
+- Recommendations based on diagnostics
+- More content for common injuries (shoulders, knees, ankles)
