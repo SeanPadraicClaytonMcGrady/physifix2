@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import { AuthShowcase } from "./components/AuthShowcase";
-import { DiagnosticInformant } from "./components/DiagnosticInformant";
+import AuthShowcase from "./components/AuthShowcase";
+import DiagnosticInformant from "./components/DiagnosticInformant";
 import { useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
