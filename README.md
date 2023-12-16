@@ -6,7 +6,7 @@ Physifix treats your aches and pains with curated diagnostics & exercises.
 
 - An interactive human model (only the rear hips & lower back have content at the moment)
 - Curated diagnostics & videos
-- OAuth (Although there is no benefit at the moment)
+- OAuth (Although there is no benefit at the moment to signing in)
 
 # Known bugs
 
