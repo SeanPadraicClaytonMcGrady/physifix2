@@ -1,8 +1,6 @@
 import { createTRPCRouter, publicProcedure } from "../trpc";
 import z from "zod";
 
-const getAllRegionsSchema = z.object({});
-
 const regionSchema = z.object({
   id: z.string(),
   name: z.string(),

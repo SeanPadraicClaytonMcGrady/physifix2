@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import * as React from "react";
-import { SVGProps } from "react";
-import { api } from "~/utils/api";
+
 import { BodyButton } from "./BodyButton";
 
 export default function MuscleSystemSVG({
@@ -10,8 +9,6 @@ export default function MuscleSystemSVG({
 }: {
   front: boolean;
 }) {
-  const router = useRouter();
-
   return (
     <svg
       className="h-full w-full"

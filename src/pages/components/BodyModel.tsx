@@ -1,7 +1,6 @@
 import { useSession } from "next-auth/react";
 import { useState } from "react";
-import { api } from "~/utils/api";
-import { BodyButton } from "./BodyButton";
+
 import MuscleSystemSVG from "./MuscleSystemSVG";
 
 export function BodyModel() {
