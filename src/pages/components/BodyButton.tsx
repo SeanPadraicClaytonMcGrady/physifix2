@@ -17,7 +17,9 @@ export function BodyButton({
     name: regionName,
   });
 
-  const diagnosticsJson = JSON.stringify(diagnostics?.Diagnostic);
+  const diagnosticsJson = diagnostics
+    ? JSON.stringify(diagnostics?.Diagnostic)
+    : [];
 
   const router = useRouter();
 

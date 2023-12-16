@@ -23,9 +23,9 @@ export default function Region() {
 
   const { name, diagnostics } = router.query;
 
-  const diagnosticsParsed = JSON.parse(
-    diagnostics as string,
-  ) as DiagnosticArray;
+  const diagnosticsParsed = diagnostics
+    ? (JSON.parse(diagnostics as string) as DiagnosticArray)
+    : [];
 
   function handleDiagnosticSelection(direction: string) {
     if (direction === "left" && selectedDiagnosticIndex > 0) {
