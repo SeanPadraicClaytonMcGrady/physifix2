@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { GoArrowDown, GoArrowUp } from "react-icons/go";
 
 export function DiagnosticInformant({
