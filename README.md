@@ -2,6 +2,8 @@
 
 Physifix treats your aches and pains with curated diagnostics & exercises. 
 
+https://physifix.vercel.app/
+
 # Features
 
 - An interactive human model (only the rear hips & lower back have content at the moment)
@@ -11,7 +13,7 @@ Physifix treats your aches and pains with curated diagnostics & exercises.
 # Known bugs
 
 - Halves of both bodies don't work: The SVG representing the front & rear human models uses a transformation of the complete image on one side to produce the picture of the other half. Unfortunately, this means that copied half isn't interactive.
-- Sometimes the videos won't load. Supabase's free tier can take some time. Restart the app if that happens.
+- Sometimes the videos won't load. Supabase's free tier can take some time. Click on the Physifix logo at the top & try again after a few seconds.
 
 # Future features:
 
