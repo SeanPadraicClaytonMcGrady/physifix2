@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GoArrowDown, GoArrowUp } from "react-icons/go";
 
 export default function DiagnosticInformant({
@@ -36,6 +36,10 @@ export default function DiagnosticInformant({
         });
       }
     }
+
+    useEffect(() => {
+      setSelectedVideoIndex(0);
+    }, [diagnostic]);
 
     return (
       <>
