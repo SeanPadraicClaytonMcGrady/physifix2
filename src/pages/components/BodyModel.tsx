@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import MuscleSystemSVG from "./MuscleSystemSVG";
 
-export function BodyModel() {
+export default function BodyModel() {
   const { data: sessionData } = useSession();
   const [front, setFront] = useState<boolean>(true);
 

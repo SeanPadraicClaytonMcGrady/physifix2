@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GoArrowDown, GoArrowUp } from "react-icons/go";
 
-export function DiagnosticInformant({
+export default function DiagnosticInformant({
   diagnostic,
 }: {
   diagnostic:

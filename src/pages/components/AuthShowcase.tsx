@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { GiEntryDoor, GiExitDoor } from "react-icons/gi";
 import { FaBookBookmark } from "react-icons/fa6";
 
-export function AuthShowcase() {
+export default function AuthShowcase() {
   const { data: sessionData } = useSession();
 
   const router = useRouter();

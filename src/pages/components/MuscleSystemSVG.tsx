@@ -1,7 +1,5 @@
-import { useRouter } from "next/router";
 import * as React from "react";
-
-import { BodyButton } from "./BodyButton";
+import BodyButton from "./BodyButton";
 
 export default function MuscleSystemSVG({
   front,

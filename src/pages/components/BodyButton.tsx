@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { api } from "~/utils/api";
 
-export function BodyButton({
+export default function BodyButton({
   d,
   className,
   style,
